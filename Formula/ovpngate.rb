@@ -4,6 +4,12 @@ class Ovpngate < Formula
   version "0.2.3"
   license "MIT"
 
+  depends_on "openvpn"
+
+  on_linux do
+    depends_on "iproute2"
+  end
+
   on_macos do
     on_arm do
       url "https://github.com/kurojs/ovpngate/releases/download/v#{version}/ovpngate-darwin-arm64"
